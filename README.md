@@ -1,3 +1,3 @@
 # smartbrainapi
 
-Server for handling user information from for these features: user registration, user sign in. 
+Server that works with database to store user information for registration and sign in for the main smartbrain application. 
