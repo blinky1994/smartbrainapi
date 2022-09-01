@@ -34,7 +34,7 @@ const db = knex({
 // });
 
 app.use(express.json());
-app.use(morgan('combined'));
+// app.use(morgan('combined'));
 app.use(cors());
 
 app.get('/', (req, res) => { res.send('success');});
