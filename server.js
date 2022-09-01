@@ -7,6 +7,7 @@ const register = require('./controllers/register')
 const signin = require('./controllers/signin')
 const profile = require('./controllers/profile')
 const image = require('./controllers/image')
+const morgan = require ('morgan');
 
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0; 
 
@@ -33,11 +34,14 @@ const db = knex({
   }
 });
 
-db.select('*').from('users').then(data => {
-  console.log(data);
-});
+// db.select('*').from('users').then(data => {
+//   console.log(data);
+// });
 
 app.use(express.json());
+
+app.use(morgan('combined'));
+
 app.use(cors());
 
 app.get('/', (req, res) => { res.send('success');});
