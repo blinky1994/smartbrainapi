@@ -1,8 +1,6 @@
 const sessions = require('./sessions');
 
 const handleSignin = (db, bcrypt, req, res) => {
-	console.log("Sign in body: ", req.body);
-
 	const { email, password } = req.body;
 
 	if (!email || !password) {
