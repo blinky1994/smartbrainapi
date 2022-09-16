@@ -1,9 +1,14 @@
 FROM node:16.16.0
 
-WORKDIR /usr/src/smart-brain-api
+# add `/app/node_modules/.bin` to $PATH
+ENV PATH /app/node_modules/.bin:$PATH
 
-COPY ./ ./
-
+# install app dependencies
+COPY ./package*.json ./
 RUN npm install
 
-CMD ["/bin/bash"]
+# add app
+COPY ./ ./
+
+# start app
+CMD ["npm", "start"]
